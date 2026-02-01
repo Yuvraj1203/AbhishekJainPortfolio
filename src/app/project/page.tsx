@@ -5,7 +5,14 @@ import SkillSection from "@/ui/SkillSection";
 import React from "react";
 
 const page = () => {
-  return <div>{"in progress.."}</div>;
+  return (
+    <main className="max-h-full w-full relative bg-gradient-to-r from-[#000] to-[#16F5292A] bg-[#12191b]">
+      <HeroSection />
+      <ProjectSection />
+      <SkillSection />
+      <ContactStrip />
+    </main>
+  );
 };
 
 export default page;

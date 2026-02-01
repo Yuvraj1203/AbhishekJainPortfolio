@@ -1,37 +1,37 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 const StickyFooter = () => {
   const [isScrolling, setIsScrolling] = useState(false);
-  const [touchStart, setTouchStart] = useState(false)
+  const [touchStart, setTouchStart] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolling(window.scrollY >= 100); // Update when scrolled past the initial view
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll); // Cleanup
+    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
   }, []);
 
-  
-  const handleTouch = () => { 
+  const handleTouch = () => {
     setTouchStart(true);
   };
 
-
   useEffect(() => {
-    document.addEventListener('touchstart', handleTouch);
+    document.addEventListener("touchstart", handleTouch);
     return () => {
-      document.removeEventListener('touchstart', handleTouch);
+      document.removeEventListener("touchstart", handleTouch);
     };
-  }, []); 
+  }, []);
 
   return (
-    <div className={`md:hidden fixed  left-0 right-0 w-[95%] m-auto  gap-2 flex items-between justify-between mx-2 rounded-lg z-40 transition-all ${isScrolling ? 'bottom-2' : '-bottom-20'}`}>
-      {touchStart ? '' : ''}            
+    <div
+      className={`md:hidden fixed  left-0 right-0 w-[95%] m-auto  gap-2 flex items-between justify-between mx-2 rounded-lg z-40 transition-all ${isScrolling ? "bottom-2" : "-bottom-20"}`}
+    >
+      {touchStart ? "" : ""}
       <Link
         href="tel:+91-7976621737"
         className="w-[48%] shadow-lg border-1 border-[#C7C7C7] backdrop-blur-lg px-2 py-3 rounded-[10px] text-[15px] font-semibold text-[#242331] flex items-center justify-center gap-2 bg-[#FFFFFF80]"
@@ -67,8 +67,10 @@ const StickyFooter = () => {
         Call Us Now
       </Link>
       <Link
-       href="/docs/Yuvraj_Resume.pdf"
-        className="w-[48%] shadow-lg border-1 border-[#C7C7C7] backdrop-blur-lg px-2 py-3 rounded-[10px] text-[15px] font-semibold text-[#242331] flex items-center justify-center gap-2 bg-[#FFFFFF80]" target='_blank' download
+        href="/docs/Abhishek_resume.pdf"
+        className="w-[48%] shadow-lg border-1 border-[#C7C7C7] backdrop-blur-lg px-2 py-3 rounded-[10px] text-[15px] font-semibold text-[#242331] flex items-center justify-center gap-2 bg-[#FFFFFF80]"
+        target="_blank"
+        download
       >
         <span className="inline-block">
           <svg
