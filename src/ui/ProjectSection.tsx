@@ -37,8 +37,8 @@ const ProjectSection = () => {
         Check out my latest work
       </h2>
       <p className="pl-[14px] lg:pl-0 text-lg text-[#fff] mt-2 mb-5 sm:mb-10 hidden sm:block text-center">
-        I have worked on a variety of projects, from simple websites to complex
-        web applications. Here are a few of my favorites.
+        I’ve worked on a wide range of projects, from simple designs to complex
+        visual systems. Here are a few of my favorites.
       </p>
       <div
         className=" w-full flex items-start justify-center  mx-auto gap-5 xl:gap-16 overflow-auto"

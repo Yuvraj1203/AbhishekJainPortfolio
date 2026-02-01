@@ -19,7 +19,7 @@ const HeroSection = () => {
         />
         <GradualSpacing
           className="inline-block  text-center  tracking-[-0.1em] font-medium  text-white dark:text-white text-3xl lg:text-5xl 2xl:text-7xl md:leading-[5rem]"
-          text="Designing &amp; developing"
+          text="Designing"
         />
         <GradualSpacing
           className="py-1  inline-block text-center text-3xl lg:text-5xl 2xl:text-7xl font-bold tracking-[0.1em]  bg-gradient-to-r from-[#0acf83] to-[#0dc27c] bg-clip-text text-transparent  md:leading-[5rem]"
@@ -30,8 +30,8 @@ const HeroSection = () => {
           text="the ordinary"
         />
         <p className="px-2 md:px-0 w-full md:w-[60%] lg:w-1/2 xl:w-[40%] 2xl:w-[30%] text-center m-auto text-[#87928f] text-lg font-semibold my-4">
-          I craft user-friendly interfaces & responsive layouts for brands & B2B
-          businesses, driving conversions & growth.
+          I craft user-friendly visuals & responsive designs for brands & B2B
+          businesses, driving engagement & growth.
         </p>
 
         <Link

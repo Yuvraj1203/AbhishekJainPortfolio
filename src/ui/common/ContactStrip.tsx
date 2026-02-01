@@ -6,8 +6,8 @@ const ContactStrip = () => {
   return (
     <div className="container py-20">
       <h2 className="w-full sm:w-3/4 m-auto bg-gradient-to-b from-white to-[#0dc27c] bg-clip-text text-transparent text-[32px] lg:text-[40px] xl:text-[46px] font-bold text-center mb-10 sm:leading-[72px]">
-        Let's bring your vision to life with innovative designs and seamless
-        functionality.
+        Let’s bring your vision to life with innovative design and impactful
+        visuals.
       </h2>
       <Link
         href="mailto:abhishek3009.lodha@gmail.com"

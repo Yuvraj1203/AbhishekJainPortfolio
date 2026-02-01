@@ -27,15 +27,15 @@ const Experience = () => {
     <div className="project-section py-20">
       <div className="container ">
         <h2 className="text-[32px] sm:text-[40px] font-bold text-center">
-          Code & Craft:{" "}
+          Visuals & Craft:{" "}
           <span className="bg-gradient-to-r from-[#0acf83] to-[#0dc27c] bg-clip-text text-transparent">
-            The Front-End Journey
+            A Design Journey
           </span>
         </h2>
         <p className="text-lg text-[#242529] mt-2 mb-5 hidden sm:block text-center">
-          Passionate about clean code & user-centric design, honed my skills as
-          a front-end developer. showcasing my journey and the expertise I bring
-          to projects.
+          Passionate about clean visuals & user-centric design, honed my skills
+          as a graphic designer, showcasing my journey and the creative
+          expertise I bring to projects.
         </p>
         <div className=" flex flex-col-reverse lg:flex-row-reverse items-baseline justify-between m-auto p-2 xl:p-0">
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
@@ -75,13 +75,13 @@ const Experience = () => {
             <div className="h-full w-full max-w-[32rem] items-center justify-center overflow-hidden pt-8">
               <BoxReveal boxColor={"#0acf831a"} duration={0.5}>
                 <p className="text-3xl font-semibold">
-                  Front-End Developer<span className="text-[#747579]"></span>
+                  Graphic Designer<span className="text-[#747579]"></span>
                 </p>
               </BoxReveal>
 
               <BoxReveal boxColor={"#0acf831a"} duration={0.5}>
                 <h2 className="mt-[.5rem] text-lg text-[#242529]">
-                  Code that isn't user-friendly fails to serve its purpose!{" "}
+                  Design that isn’t user-friendly fails to serve its purpose!{" "}
                   {/* <span className="text-[#5046e6] uppercase">purpose</span> */}
                 </h2>
               </BoxReveal>
@@ -96,7 +96,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Problem-solving & Clean Code - My passion
+                      Problem-solving & Clean Design — My Passion
                     </p>
                   </div>
                   <div className="my-2 flex items-center gap-2">
@@ -107,7 +107,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Inclusive Design Champion - Building for all
+                      Inclusive Design Champion — Designing for All
                     </p>
                   </div>
                   <div className="my-2 flex items-center gap-2">
@@ -118,7 +118,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Design-to-Dev Bridge - Seamless collaboration
+                      Design-to-Brand Bridge — Seamless Collaboration
                     </p>
                   </div>
                   <div className="my-2 flex items-center gap-2">
@@ -129,7 +129,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Performance Optimization - Fast and smooth experiences.
+                      Visual Optimization — Clean and Smooth Experiences.
                     </p>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ const Experience = () => {
 
               <BoxReveal boxColor={"#0acf831a"} duration={0.5} width="100%">
                 <Link
-                  href="https://github.com/Yuvraj1203"
+                  href="https://www.behance.net/abhishekjain3009"
                   className="w-3/4 text-center mt-[1.6rem] hidden transition-all lg:block rounded-md  text-black font-semibold text-lg"
                 >
                   <Button btntext="Ready to Make a Difference?" />
