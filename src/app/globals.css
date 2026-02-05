@@ -67,15 +67,26 @@
     @apply bg-background text-foreground;
   }
 }
-.main-section{
-  background: radial-gradient(97.27% 224.15% at 47.97% 100%, rgba(10, 207, 131, 0.20), rgba(0, 0, 0, 0.00)), radial-gradient(42.95% 98.98% at 47.97% 100%, rgba(10, 207, 131, 0.50), rgba(0, 0, 0, 0.00)), #12191B;
+.main-section {
+  background:
+    radial-gradient(
+      97.27% 224.15% at 47.97% 100%,
+      rgba(10, 207, 131, 0.2),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      42.95% 98.98% at 47.97% 100%,
+      rgba(10, 207, 131, 0.5),
+      rgba(0, 0, 0, 0)
+    ),
+    #12191b;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.project-section{
+.project-section {
   background: url(../../public/assets/projectbg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -89,10 +100,10 @@
   height: 20vh; 
   background: linear-gradient(to top, transparent 0%, #12191b 100%);
 } */
- .hero-section{
+.hero-section {
   background: url(../../public/assets/herosectionbg.png);
- }
- .mobile-box {
+}
+.mobile-box {
   display: flex;
   /* Other mobile-specific styles */
 }
@@ -105,9 +116,9 @@
   border-radius: 5px;
 }
 *::-webkit-scrollbar-thumb {
-  background: #015a09;
+  background: #1f3a4a;
   border-radius: 50px;
-  border: 1px solid #015a09;
+  border: 1px solid #1f3a4a;
 }
 /* .dock-single{
   width: 0px !important;

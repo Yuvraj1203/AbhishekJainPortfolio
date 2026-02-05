@@ -49,7 +49,7 @@ const Footer = () => {
   const div7Ref = useRef<HTMLDivElement>(null);
   return (
     <div
-      className="relative flex h-[500px] w-full items-center justify-center  bg-gradient-to-r from-[#000] to-[#16F5292A] bg-[#12191b]"
+      className="relative flex h-[500px] w-full items-center justify-center  bg-gradient-to-r from-[#000] to-[#162A3A52] bg-[#12191b]"
       ref={containerRef}
     >
       <div className="flex size-full flex-col w-full max-w-lg max-h-[200px] items-stretch justify-between gap-10">

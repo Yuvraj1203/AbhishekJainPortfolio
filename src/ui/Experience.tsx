@@ -28,7 +28,7 @@ const Experience = () => {
       <div className="container ">
         <h2 className="text-[32px] sm:text-[40px] font-bold text-center">
           Visuals & Craft:{" "}
-          <span className="bg-gradient-to-r from-[#0acf83] to-[#0dc27c] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#3A6F8F] to-[#3E6E8A] bg-clip-text text-transparent">
             A Design Journey
           </span>
         </h2>
@@ -73,20 +73,20 @@ const Experience = () => {
           </div>
           <div className="w-full lg:w-auto">
             <div className="h-full w-full max-w-[32rem] items-center justify-center overflow-hidden pt-8">
-              <BoxReveal boxColor={"#0acf831a"} duration={0.5}>
+              <BoxReveal boxColor={"#3A6F8F1a"} duration={0.5}>
                 <p className="text-3xl font-semibold">
                   Graphic Designer<span className="text-[#747579]"></span>
                 </p>
               </BoxReveal>
 
-              <BoxReveal boxColor={"#0acf831a"} duration={0.5}>
+              <BoxReveal boxColor={"#3A6F8F1a"} duration={0.5}>
                 <h2 className="mt-[.5rem] text-lg text-[#242529]">
                   Design that isn’t user-friendly fails to serve its purpose!{" "}
                   {/* <span className="text-[#5046e6] uppercase">purpose</span> */}
                 </h2>
               </BoxReveal>
 
-              <BoxReveal boxColor={"#0acf831a"} duration={0.5}>
+              <BoxReveal boxColor={"#3A6F8F1a"} duration={0.5}>
                 <div className="mt-[1.5rem]">
                   <div className="my-2 flex items-center gap-2">
                     <Image
@@ -135,7 +135,7 @@ const Experience = () => {
                 </div>
               </BoxReveal>
 
-              <BoxReveal boxColor={"#0acf831a"} duration={0.5} width="100%">
+              <BoxReveal boxColor={"#3A6F8F1a"} duration={0.5} width="100%">
                 <Link
                   href="https://www.behance.net/abhishekjain3009"
                   className="w-3/4 text-center mt-[1.6rem] hidden transition-all lg:block rounded-md  text-black font-semibold text-lg"
@@ -146,7 +146,7 @@ const Experience = () => {
             </div>
           </div>
         </div>
-        <BoxReveal boxColor={"#0acf831a"} duration={0.5} width="100%">
+        <BoxReveal boxColor={"#3A6F8F1a"} duration={0.5} width="100%">
           <Link
             href="https://github.com/Yuvraj1203"
             className="sm:hidden w-3/4 m-auto text-center mt-[1.6rem]  transition-all block rounded-md  text-black font-semibold text-lg"
