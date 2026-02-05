@@ -6,7 +6,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <main className="max-h-full  relative bg-gradient-to-r from-[#000] to-[#162A3A52] bg-[#12191b]">
+    <main className="max-h-full  relative bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]">
       <HeroSection />
       <ProjectSection />
       <SkillSection />

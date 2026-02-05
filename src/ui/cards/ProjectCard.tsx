@@ -20,7 +20,7 @@ const ProjectCard = ({
     <div className="border- rounded-lg ">
       <MagicCard
         className="flex flex-col items-center justify-center shadow-lg rounded-lg bg-white "
-        gradientColor="#162A3A52"
+        gradientColor="#2196F352"
       >
         <BorderBeam size={350} duration={20} delay={2} />
         <div className="w-full ">
