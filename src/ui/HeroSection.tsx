@@ -22,7 +22,7 @@ const HeroSection = () => {
           text="Designing"
         />
         <GradualSpacing
-          className="py-1  inline-block text-center text-3xl lg:text-5xl 2xl:text-7xl font-bold tracking-[0.1em]  bg-gradient-to-r from-[#3A6F8F] to-[#3E6E8A] bg-clip-text text-transparent  md:leading-[5rem]"
+          className="py-1  inline-block text-center text-3xl lg:text-5xl 2xl:text-7xl font-bold tracking-[0.1em]  bg-gradient-to-r from-[#64B5F6] to-[#42A5F5] bg-clip-text text-transparent  md:leading-[5rem]"
           text="beyond"
         />
         <GradualSpacing
@@ -36,7 +36,7 @@ const HeroSection = () => {
 
         <Link
           href="/docs/Abhishek_resume.pdf"
-          className="mx-auto mt-10 w-fit  rounded-lg  bg-gradient-to-r from-[#000] to-[#3E6E8A] hover:scale-105 border-2 py-1.5 sm:py-2.5 px-8 sm:px-14 border-[#3E6E8A] text-white relative z-40 text-lg font-semibold transition-all block"
+          className="mx-auto mt-10 w-fit  rounded-lg  bg-gradient-to-r from-[#000] to-[#42A5F5] hover:scale-105 border-2 py-1.5 sm:py-2.5 px-8 sm:px-14 border-[#42A5F5] text-white relative z-40 text-lg font-semibold transition-all block"
           target="_blank"
           download
         >

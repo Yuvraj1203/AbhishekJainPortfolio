@@ -47,9 +47,11 @@ const Footer = () => {
   const div5Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
+  const div8Ref = useRef<HTMLDivElement>(null);
+  const div9Ref = useRef<HTMLDivElement>(null);
   return (
     <div
-      className="relative flex h-[500px] w-full items-center justify-center  bg-gradient-to-r from-[#000] to-[#162A3A52] bg-[#12191b]"
+      className="relative flex h-[500px] w-full items-center justify-center  bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]"
       ref={containerRef}
     >
       <div className="flex size-full flex-col w-full max-w-lg max-h-[200px] items-stretch justify-between gap-10">
@@ -136,6 +138,28 @@ const Footer = () => {
             </Link>
           </Circle>
         </div>
+        <div className="flex flex-row items-center justify-between">
+          <Circle ref={div8Ref}>
+            <Link href="https://www.linkedin.com/in/abhishek-jain-%F0%9F%87%AE%F0%9F%87%B3-626107228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+              <Image
+                src="/icons/linkedin.png"
+                width={65}
+                height={65}
+                alt="icons"
+              />
+            </Link>
+          </Circle>
+          <Circle ref={div9Ref}>
+            <Link href={"https://linktr.ee/abhishekdesigner"}>
+              <Image
+                src="/icons/linktree.png"
+                width={65}
+                height={65}
+                alt="icons"
+              />
+            </Link>
+          </Circle>
+        </div>
       </div>
 
       <AnimatedBeam
@@ -174,6 +198,20 @@ const Footer = () => {
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div7Ref}
+        toRef={div4Ref}
+        curvature={75}
+        endYOffset={10}
+        reverse
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div8Ref}
+        toRef={div4Ref}
+        reverse
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div9Ref}
         toRef={div4Ref}
         curvature={75}
         endYOffset={10}

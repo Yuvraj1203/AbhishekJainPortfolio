@@ -33,7 +33,7 @@ const StickyFooter = () => {
     >
       {touchStart ? "" : ""}
       <Link
-        href="tel:+91-7976621737"
+        href="tel:+91-7976522662"
         className="w-[48%] shadow-lg border-1 border-[#C7C7C7] backdrop-blur-lg px-2 py-3 rounded-[10px] text-[15px] font-semibold text-[#242331] flex items-center justify-center gap-2 bg-[#FFFFFF80]"
       >
         <span className="inline-block">
