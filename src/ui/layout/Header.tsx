@@ -36,7 +36,7 @@ const Header = () => {
   }, []);
   return (
     <div
-      className={`sm:w-1/2 fixed z-50 top-4 w-[96%] m-auto sm:top-8 left-0 right-0 rounded-xl ${isScrolling ? "bg-gradient-to-r from-[#000] to-[#01322090] shadow-[0_0px_12px_#fff]" : ""}`}
+      className={`sm:w-1/2 fixed z-50 top-6 w-[96%] m-auto sm:top-8 left-0 right-0 rounded-xl ${isScrolling ? "bg-gradient-to-r from-[#000] to-[#01322090] shadow-[0_0px_12px_#fff]" : ""}`}
     >
       <div
         className={`flex w-full m-auto items-center justify-between  container p-2 border-1 border-indigo-200 rounded-xl bg-[rgb(0,0,0,0.1)] `}
