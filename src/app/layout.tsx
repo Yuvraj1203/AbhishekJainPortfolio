@@ -6,6 +6,8 @@ import { NextUIProvider } from "@nextui-org/system";
 import Footer from "@/ui/layout/Footer";
 import FloatingContact from "@/ui/common/FloatingContact";
 import StickyFooter from "@/ui/layout/StickyFooter";
+import HeadlineStrip from "@/ui/common/HeadlineStrip";
+import FooterStripe from "@/ui/common/FooterStripe";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -22,13 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={quicksand.className}>
-        <NextUIProvider className="flex items-center justify-between">
+        <NextUIProvider className="flex flex-col items-center justify-between">
+          <HeadlineStrip />
           <Header />
           {children}
           {/* <div className="text-2xl text-blue-950 font-semibold">in Progress...</div> */}
           {/* <Footer /> */}
           <FloatingContact />
           <StickyFooter />
+          <FooterStripe />
         </NextUIProvider>
       </body>
     </html>
