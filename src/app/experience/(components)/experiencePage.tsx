@@ -6,46 +6,104 @@ import Button from "@/ui/common/Button";
 
 const experiences = [
   {
-    title: "Arena Animation - VFX Prime & Animation",
-    location: "",
-    date: "2022",
-    description:
-      "A comprehensive program covering visual effects, animation and motion graphics, building a strong fondation in design principles, creativity and technical skills.",
-    imageUrl: "/company/areanavfx.png",
+    title: "VIVA Security Solutions",
+    location: "Udaipur city, India",
+    date: "1 month",
+    description: "Android Develop Project Smart Attendence System",
+    imageUrl: "/company/vivosol.png",
   },
   {
-    title: "Diploma in Computer Science & Engineering - Vidhya Bhawan",
-    location: "Udaipur (BTER Jodhpur)",
-    date: "2020",
-    description:
-      "Focused on core computer science fundamentals, programming and software technologies.",
-    imageUrl: "/company/vidhyabhawan.png",
+    title: "PHP Poets",
+    location: "Udaipur city, India",
+    date: "1 month",
+    description: "Data Entry, Software Testing & PHP Core & Advance Projects",
+    imageUrl: "/company/phppoets.png",
   },
   {
-    title: "Secondary School - Shree Parshwanath Jain Vidhyalaya (CBSE)",
-    location: "Pali city, India",
-    date: "2018",
-    description:
-      "Completed foundational education with emphasis on academic discipline and personal development.",
-    imageUrl: "/company/ShreeParshawnath.png",
+    title: "Kardhar Infotech Pvt. Ltd",
+    location: "Udaipur city, India",
+    date: "1 year",
+    description: "Digital Marketing, Google Adwords & Graphic Designer",
+    imageUrl: "/company/kardhar.png",
+  },
+  {
+    title: "Yug Technology Pvt. Ltd",
+    location: "Udaipur city, India",
+    date: "3 months",
+    description: "Junior Graphic Designer",
+    imageUrl: "/company/yugtech.png",
+  },
+  {
+    title: "Matrix Web Infotech Pvt. Ltd",
+    location: "Udaipur city, India",
+    date: "1 year",
+    description: "Junior Graphic Designer",
+    imageUrl: "/company/matrixweb.png",
+  },
+  {
+    title: "E-Connect Pvt. Ltd",
+    location: "Udaipur city, India",
+    date: "3 months",
+    description: "Executive Graphic Designer",
+    imageUrl: "/company/econnect.png",
+  },
+  {
+    title: "Zenver Technologies",
+    location: "Udaipur city, India",
+    date: "6 months",
+    description: "Sr.Graphic Designer Executive",
+    imageUrl: "/company/zenvertech.png",
+  },
+  {
+    title: "Elite Informatics Pvt. Ltd & Ayush Remedies",
+    location: "Udaipur city, India",
+    date: "3 months",
+    description: "Sr.Graphic Designer Executive",
+    imageUrl: "/company/eliteinfo.png",
+  },
+  {
+    title: "Electroride By Goenka Green",
+    location: "Varanasi, Uttar Pradesh, India",
+    date: "3 years",
+    description: "Sr. Creative Graphic Designer Executive",
+    imageUrl: "/company/electroride.webp",
+  },
+  {
+    title: "Rajendra Toyota Group",
+    location: "Udaipur city, India",
+    date: "3 years",
+    description: "Sr.Graphic Creative Head",
+    imageUrl: "/company/toyato.png",
+  },
+  {
+    title: "Freelancer Designer",
+    location: "Udaipur city, India",
+    date: "2 years",
+    description: "Various Client Projects",
+    imageUrl: "/assets/behance.png",
+  },
+  {
+    title: "Creative Director",
+    location: "Udaipur city, India",
+    date: "Ongoing",
+    description: "Personal Projects",
+    imageUrl: "/logo.png",
   },
 ];
-const Experience = () => {
+const ExperiencePage = () => {
   return (
     <div className="project-section py-20">
       <div className="container ">
         <h2 className="text-[32px] sm:text-[40px] font-bold text-center">
-          Academic Foundation:{" "}
+          Visuals & Craft:{" "}
           <span className="bg-gradient-to-r from-[#64B5F6] to-[#42A5F5] bg-clip-text text-transparent">
-            Learning & Growth
+            A Design Journey
           </span>
         </h2>
         <p className="text-lg text-[#242529] mt-2 mb-5 hidden sm:block text-center">
-          Driven by curiosity and a commitment to excellence, my academic
-          journey has shaped my understanding of design principles, creativity,
-          and problem-solving. Through structured learning and hands-on
-          projects, I built a strong foundation that fuels the expertise I bring
-          to every opportunity.
+          Passionate about clean visuals & user-centric design, honed my skills
+          as a graphic designer, showcasing my journey and the creative
+          expertise I bring to projects.
         </p>
         <div className=" flex flex-col-reverse lg:flex-row-reverse items-baseline justify-between m-auto p-2 xl:p-0">
           <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
@@ -85,13 +143,13 @@ const Experience = () => {
             <div className="h-full w-full max-w-[32rem] items-center justify-center overflow-hidden pt-8">
               <BoxReveal boxColor={"#64B5F61a"} duration={0.5}>
                 <p className="text-3xl font-semibold">
-                  Academic Focus<span className="text-[#747579]"></span>
+                  Graphic Designer<span className="text-[#747579]"></span>
                 </p>
               </BoxReveal>
 
               <BoxReveal boxColor={"#64B5F61a"} duration={0.5}>
                 <h2 className="mt-[.5rem] text-lg text-[#242529]">
-                  Learning that isn’t practical fails its purpose!{" "}
+                  Design that isn’t user-friendly fails to serve its purpose!{" "}
                   {/* <span className="text-[#5046e6] uppercase">purpose</span> */}
                 </h2>
               </BoxReveal>
@@ -106,8 +164,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Strong Theoretical Foundation — Building deep
-                      understanding of core principles
+                      Problem-solving & Clean Design — My Passion
                     </p>
                   </div>
                   <div className="my-2 flex items-center gap-2">
@@ -118,8 +175,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Research & Analytical Thinking — Solving problems with
-                      structured approaches
+                      Inclusive Design Champion — Designing for All
                     </p>
                   </div>
                   <div className="my-2 flex items-center gap-2">
@@ -130,8 +186,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Collaborative Learning — Team projects &
-                      cross-disciplinary exposure
+                      Design-to-Brand Bridge — Seamless Collaboration
                     </p>
                   </div>
                   <div className="my-2 flex items-center gap-2">
@@ -142,8 +197,7 @@ const Experience = () => {
                       alt="checkmark"
                     />
                     <p className="text-base text-[#242529] font-medium">
-                      Continuous Skill Development — Evolving through workshops,
-                      coursework & hands-on assignments
+                      Visual Optimization — Clean and Smooth Experiences.
                     </p>
                   </div>
                 </div>
@@ -165,4 +219,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default ExperiencePage;

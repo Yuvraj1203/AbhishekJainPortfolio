@@ -18,6 +18,10 @@ const HeaderItems = [
     title: "Project",
   },
   {
+    url: "/experience",
+    title: "Experience",
+  },
+  {
     url: "/contact",
     title: "Contact",
   },
