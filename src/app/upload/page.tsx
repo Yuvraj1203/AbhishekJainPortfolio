@@ -4,10 +4,18 @@ import React, { useState, useCallback } from "react";
 import Image from "next/image";
 import { useDropzone } from "react-dropzone";
 import ShimmerButton from "@/components/magicui/shimmer-button";
-import { FiUploadCloud, FiImage, FiX, FiCheck } from "react-icons/fi";
+import {
+  FiUploadCloud,
+  FiImage,
+  FiX,
+  FiCheck,
+  FiLock,
+  FiUnlock,
+} from "react-icons/fi";
 
 const CLOUDINARY_CLOUD_NAME = "dsbesmuuh";
 const CLOUDINARY_UPLOAD_PRESET = "AbhishekGallery";
+const UPLOAD_TOKEN = "iamabhishekicanupload";
 
 interface UploadedImage {
   url: string;
@@ -26,6 +34,18 @@ const UploadPage = () => {
     null,
   );
   const [error, setError] = useState<string | null>(null);
+  const [token, setToken] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [tokenError, setTokenError] = useState<string | null>(null);
+
+  const verifyToken = () => {
+    if (token === UPLOAD_TOKEN) {
+      setIsAuthenticated(true);
+      setTokenError(null);
+    } else {
+      setTokenError("Invalid token. Please enter the correct token to upload.");
+    }
+  };
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -116,10 +136,71 @@ const UploadPage = () => {
     }
   };
 
+  // Render token authentication screen
+  if (!isAuthenticated) {
+    return (
+      <main className="min-h-screen w-full pt-24 pb-10 relative bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              Upload{" "}
+              <span className="bg-gradient-to-r from-[#64B5F6] to-[#42A5F5] bg-clip-text text-transparent">
+                Image
+              </span>
+            </h1>
+            <p className="text-[#87928f] text-lg font-semibold">
+              Upload your images to Cloudinary
+            </p>
+          </div>
+
+          <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-white/10 shadow-2xl">
+            <div className="text-center py-8">
+              <div className="w-20 h-20 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center">
+                <FiLock className="text-4xl text-[#42A5F5]" />
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2">
+                Upload Access Required
+              </h2>
+              <p className="text-[#87928f] mb-6">
+                Enter the access token to upload images
+              </p>
+
+              <div className="max-w-md mx-auto">
+                <input
+                  type="password"
+                  value={token}
+                  onChange={(e) => setToken(e.target.value)}
+                  placeholder="Enter access token"
+                  className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white text-center mb-4 focus:outline-none focus:border-[#42A5F5]"
+                  onKeyDown={(e) => e.key === "Enter" && verifyToken()}
+                />
+                <ShimmerButton
+                  onClick={verifyToken}
+                  className="w-full py-3"
+                  borderRadius="10px"
+                  background="radial-gradient(97.27% 224.15% at 47.97% 100%, rgba(33, 150, 243, 0.20), rgba(0, 0, 0, 0.00)), radial-gradient(42.95% 98.98% at 47.97% 100%, rgba(33, 150, 243, 0.50), rgba(0, 0, 0, 0.00)), #12191B"
+                >
+                  <span className="flex items-center justify-center gap-2">
+                    <FiUnlock className="text-xl" />
+                    Verify Token
+                  </span>
+                </ShimmerButton>
+
+                {tokenError && (
+                  <p className="text-red-400 mt-4">{tokenError}</p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Render upload interface after authentication
   return (
     <main className="min-h-screen w-full pt-24 pb-10 relative bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]">
       <div className="container mx-auto px-4 max-w-4xl">
-        {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Upload{" "}
@@ -132,9 +213,62 @@ const UploadPage = () => {
           </p>
         </div>
 
-        {/* Upload Area */}
         <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-white/10 shadow-2xl">
-          {!uploadedImage ? (
+          {uploadedImage ? (
+            // Uploaded Success State
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                <FiCheck className="text-5xl text-green-500" />
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2">
+                Upload Successful!
+              </h2>
+              <p className="text-[#87928f] mb-6">
+                Your image has been uploaded to Cloudinary
+              </p>
+
+              <div className="relative rounded-xl overflow-hidden border border-white/10 mb-6">
+                <Image
+                  src={uploadedImage.url}
+                  alt="Uploaded"
+                  width={500}
+                  height={400}
+                  className="w-full h-80 object-contain bg-black/50"
+                />
+              </div>
+
+              <div className="bg-black/30 rounded-xl p-4 mb-6">
+                <p className="text-[#87928f] text-sm mb-2">Image URL:</p>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={uploadedImage.url}
+                    readOnly
+                    className="flex-1 bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white text-sm overflow-hidden text-ellipsis"
+                  />
+                  <button
+                    onClick={handleCopyUrl}
+                    className="bg-[#42A5F5] hover:bg-[#2196F3] text-white px-4 py-2 rounded-lg transition-colors"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+
+              <ShimmerButton
+                onClick={handleRemove}
+                className="w-full py-4"
+                borderRadius="10px"
+                background="radial-gradient(97.27% 224.15% at 47.97% 100%, rgba(33, 150, 243, 0.20), rgba(0, 0, 0, 0.00)), radial-gradient(42.95% 98.98% at 47.97% 100%, rgba(33, 150, 243, 0.50), rgba(0, 0, 0, 0.00)), #12191B"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  <FiImage className="text-xl" />
+                  Upload Another Image
+                </span>
+              </ShimmerButton>
+            </div>
+          ) : (
+            // Upload Interface
             <>
               <div
                 {...getRootProps()}
@@ -175,7 +309,6 @@ const UploadPage = () => {
                 </div>
               </div>
 
-              {/* Preview */}
               {previewUrl && (
                 <div className="mt-6">
                   <div className="relative inline-block w-full">
@@ -203,7 +336,6 @@ const UploadPage = () => {
                     </p>
                   </div>
 
-                  {/* Upload Button */}
                   <div className="mt-6">
                     <ShimmerButton
                       onClick={handleUpload}
@@ -228,7 +360,6 @@ const UploadPage = () => {
                     </ShimmerButton>
                   </div>
 
-                  {/* Progress Bar */}
                   {uploading && (
                     <div className="mt-4">
                       <div className="h-2 bg-white/10 rounded-full overflow-hidden">
@@ -242,69 +373,12 @@ const UploadPage = () => {
                 </div>
               )}
 
-              {/* Error Message */}
               {error && (
                 <div className="mt-4 p-4 bg-red-500/10 border border-red-500/50 rounded-xl">
                   <p className="text-red-400 text-center">{error}</p>
                 </div>
               )}
             </>
-          ) : (
-            /* Uploaded Success */
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-green-500/20 rounded-full flex items-center justify-center">
-                <FiCheck className="text-5xl text-green-500" />
-              </div>
-              <h2 className="text-2xl font-bold text-white mb-2">
-                Upload Successful!
-              </h2>
-              <p className="text-[#87928f] mb-6">
-                Your image has been uploaded to Cloudinary
-              </p>
-
-              {/* Uploaded Image Preview */}
-              <div className="relative rounded-xl overflow-hidden border border-white/10 mb-6">
-                <Image
-                  src={uploadedImage.url}
-                  alt="Uploaded"
-                  width={500}
-                  height={400}
-                  className="w-full h-80 object-contain bg-black/50"
-                />
-              </div>
-
-              {/* URL Copy */}
-              <div className="bg-black/30 rounded-xl p-4 mb-6">
-                <p className="text-[#87928f] text-sm mb-2">Image URL:</p>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="text"
-                    value={uploadedImage.url}
-                    readOnly
-                    className="flex-1 bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white text-sm overflow-hidden text-ellipsis"
-                  />
-                  <button
-                    onClick={handleCopyUrl}
-                    className="bg-[#42A5F5] hover:bg-[#2196F3] text-white px-4 py-2 rounded-lg transition-colors"
-                  >
-                    Copy
-                  </button>
-                </div>
-              </div>
-
-              {/* Upload Another */}
-              <ShimmerButton
-                onClick={handleRemove}
-                className="w-full py-4"
-                borderRadius="10px"
-                background="radial-gradient(97.27% 224.15% at 47.97% 100%, rgba(33, 150, 243, 0.20), rgba(0, 0, 0, 0.00)), radial-gradient(42.95% 98.98% at 47.97% 100%, rgba(33, 150, 243, 0.50), rgba(0, 0, 0, 0.00)), #12191B"
-              >
-                <span className="flex items-center justify-center gap-2">
-                  <FiImage className="text-xl" />
-                  Upload Another Image
-                </span>
-              </ShimmerButton>
-            </div>
           )}
         </div>
       </div>
