@@ -24,6 +24,10 @@ const HeaderItems = [
     title: "Experience",
   },
   {
+    url: "/skills",
+    title: "Skills",
+  },
+  {
     url: "/upload",
     title: "Upload",
   },
