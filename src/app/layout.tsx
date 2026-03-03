@@ -32,7 +32,7 @@ export default function RootLayout({
           {/* <Footer /> */}
           <FloatingContact />
           <StickyFooter />
-          <FooterStripe />
+          <FooterStripe layout={true} />
         </NextUIProvider>
       </body>
     </html>

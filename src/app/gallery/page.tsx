@@ -112,7 +112,7 @@ const GalleryPage = () => {
   };
 
   return (
-    <main className="min-h-screen w-full pt-24 pb-10 relative bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]">
+    <main className="min-h-screen w-full pt-24 pb-28 relative bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
