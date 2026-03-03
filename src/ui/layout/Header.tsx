@@ -22,6 +22,14 @@ const HeaderItems = [
     title: "Experience",
   },
   {
+    url: "/upload",
+    title: "Upload",
+  },
+  {
+    url: "/gallery",
+    title: "Gallery",
+  },
+  {
     url: "/contact",
     title: "Contact",
   },
