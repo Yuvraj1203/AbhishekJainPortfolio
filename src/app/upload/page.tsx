@@ -353,7 +353,7 @@ const UploadPage = () => {
                         ) : (
                           <>
                             <FiUploadCloud className="text-xl" />
-                            Upload to Cloudinary
+                            Upload to Gallery
                           </>
                         )}
                       </span>
