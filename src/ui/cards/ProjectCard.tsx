@@ -9,12 +9,14 @@ const ProjectCard = ({
   projectDuration,
   aboutProject,
   webUrl,
+  techTags = [],
 }: {
   webUrl: string;
   imgUrl: string;
   projectTitle: string;
   projectDuration: string;
   aboutProject: string;
+  techTags?: string[];
 }) => {
   return (
     <div className="border- rounded-lg ">
@@ -44,24 +46,14 @@ const ProjectCard = ({
           </p>
 
           <div className="flex flex-wrap gap-2 my-3">
-            <p className="py-1 px-2 rounded-md bg-[#747579]/10 text-black font-semibold text-[12px]">
-              Nextjs
-            </p>
-            <p className="py-1 px-2 rounded-md bg-[#747579]/10 text-black font-semibold text-[12px]">
-              TailwindCSS
-            </p>
-            <p className="py-1 px-2 rounded-md bg-[#747579]/10 text-black font-semibold text-[12px]">
-              Shadcn UI
-            </p>
-            <p className="py-1 px-2 rounded-md bg-[#747579]/10 text-black font-semibold text-[12px]">
-              Next UI
-            </p>
-            <p className="py-1 px-2 rounded-md bg-[#747579]/10 text-black font-semibold text-[12px]">
-              Figma
-            </p>
-            <p className="py-1 px-2 rounded-md bg-[#747579]/10 text-black font-semibold text-[12px]">
-              Redux
-            </p>
+            {techTags.map((tag, index) => (
+              <p
+                key={index}
+                className="py-1 px-2 rounded-md bg-[#747579]/10 text-black font-semibold text-[12px]"
+              >
+                {tag}
+              </p>
+            ))}
           </div>
           <Link
             href={webUrl}

@@ -6,27 +6,96 @@ import { cn } from "@/lib/utils";
 const workData = [
   {
     imgUrl: "/assets/blogzine.gif",
-    projectTitle: "Project Title: Platform for Anything",
-    projectDuration: "Jul 2023 - Present",
+    projectTitle: "Blogzine - Content Platform",
+    projectDuration: "Jul 2023 - Mar 2024",
     aboutProject:
-      "Project simplifies the your journey. Explore programs, prepare for something, and secure everything - all on one platform.",
-    webUrl: "/#javascript;",
+      "Modern content management platform with dynamic UI animations and responsive design. Used AI tools for rapid prototyping.",
+    webUrl: "https://blogzine.com",
+    techTags: ["Next.js", "Tailwind", "Figma", "Midjourney", "Framer Motion"],
   },
   {
-    imgUrl: "/assets/blogzine.gif",
-    projectTitle: "Project Title: Platform for Anything",
-    projectDuration: "Jul 2023 - Present",
+    imgUrl: "/assets/gradding.gif",
+    projectTitle: "Gradding - EdTech LMS",
+    projectDuration: "Jan 2023 - Jun 2023",
     aboutProject:
-      "Project simplifies the your journey. Explore programs, prepare for something, and secure everything - all on one platform.",
-    webUrl: "/#javascript;",
+      "Interactive learning management system dashboard with motion graphics and user-centric design.",
+    webUrl: "https://gradding.com",
+    techTags: ["React", "Adobe XD", "After Effects", "Photoshop", "TypeScript"],
   },
   {
-    imgUrl: "/assets/blogzine.gif",
-    projectTitle: "Project Title: Platform for Anything",
-    projectDuration: "Jul 2023 - Present",
+    imgUrl: "/assets/mySip.gif",
+    projectTitle: "MySIP - Finance Dashboard",
+    projectDuration: "Apr 2024 - Present",
     aboutProject:
-      "Project simplifies the your journey. Explore programs, prepare for something, and secure everything - all on one platform.",
-    webUrl: "/#javascript;",
+      "Personal finance tracker with sleek UI, charts, and AI-powered insights using DALL-E for custom illustrations.",
+    webUrl: "https://mysip.app",
+    techTags: ["Next.js", "Tailwind", "DALL-E", "Stable Diffusion", "Chart.js"],
+  },
+  {
+    imgUrl: "/company/areanavfx.png",
+    projectTitle: "AreaNavFX - VFX Branding",
+    projectDuration: "Feb 2024 - Mar 2024",
+    aboutProject:
+      "Complete brand identity including logo, website UI, and promotional motion graphics.",
+    webUrl: "https://areanavfx.com",
+    techTags: [
+      "Illustrator",
+      "Premiere Pro",
+      "RunwayML",
+      "Photoshop",
+      "Webflow",
+    ],
+  },
+  {
+    imgUrl: "/company/econnect.png",
+    projectTitle: "EConnect - Business Portal",
+    projectDuration: "Nov 2023 - Jan 2024",
+    aboutProject:
+      "Enterprise portal redesign with modern UI/UX and ChatGPT-assisted content generation.",
+    webUrl: "https://econnect.io",
+    techTags: ["Figma", "ChatGPT", "Next.js", "Tailwind", "Claude"],
+  },
+  {
+    imgUrl: "/assets/gradding.png",
+    projectTitle: "EliteInfo - Corporate Site",
+    projectDuration: "Sep 2023 - Oct 2023",
+    aboutProject:
+      "Professional corporate website with custom illustrations and smooth animations.",
+    webUrl: "https://eliteinfo.com",
+    techTags: [
+      "Illustrator",
+      "After Effects",
+      "GSAP",
+      "WordPress",
+      "Procreate",
+    ],
+  },
+  {
+    imgUrl: "/company/matrixweb.png",
+    projectTitle: "MatrixWeb - Web Agency",
+    projectDuration: "May 2023 - Aug 2023",
+    aboutProject:
+      "Multi-page agency site with portfolio showcase and generative AI backgrounds.",
+    webUrl: "https://matrixweb.com",
+    techTags: ["Stable Diffusion", "Photoshop", "Webflow", "Midjourney"],
+  },
+  {
+    imgUrl: "/company/kardhar.png",
+    projectTitle: "Kardhar - Ecommerce Branding",
+    projectDuration: "Mar 2024 - Apr 2024",
+    aboutProject:
+      "Full e-commerce brand kit including packaging, web UI, and product visuals generated with AI.",
+    webUrl: "https://kardhar.com",
+    techTags: ["Illustrator", "DALL-E", "Lightroom", "Figma", "Canva"],
+  },
+  {
+    imgUrl: "/company/vivosol.png",
+    projectTitle: "VivoSol - Tech Startup",
+    projectDuration: "Dec 2023 - Feb 2024",
+    aboutProject:
+      "Startup landing page with futuristic design and video backgrounds created in Premiere.",
+    webUrl: "https://vivosol.ai",
+    techTags: ["Premiere Pro", "After Effects", "Gemini AI", "Next.js"],
   },
 ];
 
