@@ -49,6 +49,7 @@ const Footer = () => {
   const div7Ref = useRef<HTMLDivElement>(null);
   const div8Ref = useRef<HTMLDivElement>(null);
   const div9Ref = useRef<HTMLDivElement>(null);
+  const div10Ref = useRef<HTMLDivElement>(null);
   return (
     <div
       className="relative flex h-[500px] w-full items-center justify-center  bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]"
@@ -159,6 +160,16 @@ const Footer = () => {
               />
             </Link>
           </Circle>
+          <Circle ref={div10Ref}>
+            <Link href="https://www.facebook.com/share/1KeVgW2uw4/">
+              <Image
+                src="/icons/facebook.png"
+                width={65}
+                height={65}
+                alt="Facebook"
+              />
+            </Link>
+          </Circle>
         </div>
       </div>
 
@@ -215,6 +226,12 @@ const Footer = () => {
         toRef={div4Ref}
         curvature={75}
         endYOffset={10}
+        reverse
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div10Ref}
+        toRef={div4Ref}
         reverse
       />
     </div>
