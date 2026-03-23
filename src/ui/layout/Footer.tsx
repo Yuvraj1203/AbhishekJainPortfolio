@@ -141,19 +141,20 @@ const Footer = () => {
         </div>
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div8Ref}>
-            <Link href="https://www.linkedin.com/in/abhishek-jain-%F0%9F%87%AE%F0%9F%87%B3-626107228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+            <Link href={"https://linktr.ee/abhishekdesigner"}>
               <Image
-                src="/icons/linkedin.png"
+                src="/icons/linktree.png"
                 width={65}
                 height={65}
                 alt="icons"
               />
             </Link>
           </Circle>
+
           <Circle ref={div9Ref}>
-            <Link href={"https://linktr.ee/abhishekdesigner"}>
+            <Link href="https://www.linkedin.com/in/abhishek-jain-%F0%9F%87%AE%F0%9F%87%B3-626107228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
               <Image
-                src="/icons/linktree.png"
+                src="/icons/linkedin.png"
                 width={65}
                 height={65}
                 alt="icons"
