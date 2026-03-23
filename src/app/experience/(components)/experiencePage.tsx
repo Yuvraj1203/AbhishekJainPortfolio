@@ -59,7 +59,7 @@ const experiences = [
     location: "Udaipur city, India",
     date: "3 months",
     description: "Sr.Graphic Designer Executive",
-    imageUrl: "/company/eliteinfo.png",
+    imageUrl: "/company/eliteinfo.jpeg",
   },
   {
     title: "Electroride By Goenka Green",
