@@ -56,32 +56,6 @@ const Skills = [
     className:
       "z-10 animate-floatright absolute bottom-0 xl:bottom-[5%] right-[45%] drop-shadow-md",
   },
-  // AI Tools (add corresponding icons to public/skills/)
-  {
-    skillImg: "/icons/chatgpt.png",
-    className:
-      "z-10 animate-floatleft absolute top-[20%] left-[5%] drop-shadow-md",
-  },
-  {
-    skillImg: "/icons/midjourney.png",
-    className:
-      "z-10 animate-floatright absolute top-[65%] left-[35%] drop-shadow-md",
-  },
-  {
-    skillImg: "/icons/dalle.png",
-    className:
-      "z-10 animate-floatleft absolute top-[75%] right-[10%] drop-shadow-md",
-  },
-  {
-    skillImg: "/icons/copilot.png",
-    className:
-      "z-10 animate-floatright absolute bottom-[15%] left-[40%] drop-shadow-md",
-  },
-  {
-    skillImg: "/icons/claude.png",
-    className:
-      "z-10 animate-floatleft absolute top-[40%] right-[30%] drop-shadow-md",
-  },
 ];
 
 const SkillSection = () => {
