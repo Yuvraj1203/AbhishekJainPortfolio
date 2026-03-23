@@ -4,7 +4,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import ShimmerButton from "@/components/magicui/shimmer-button";
-import { FiImage, FiLoader, FiRefreshCw, FiTrash2, FiX } from "react-icons/fi";
+import {
+  FiImage,
+  FiLoader,
+  FiRefreshCw,
+  FiTrash2,
+  FiX,
+  FiLock,
+} from "react-icons/fi";
 
 interface CloudinaryImage {
   publicId: string;
@@ -46,9 +53,59 @@ const GalleryPage = () => {
   const [deletingImage, setDeletingImage] = useState<string | null>(null);
   const [deleteError, setDeleteError] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authError, setAuthError] = useState<string | null>(null);
+  const [confirmDeleteAll, setConfirmDeleteAll] = useState(false);
+  const [deletingAll, setDeletingAll] = useState(false);
+  const [deleteAllError, setDeleteAllError] = useState<string | null>(null);
   const router = useRouter();
 
   const IMAGES_PER_PAGE = 10;
+
+  const verifyAuthToken = () => {
+    if (authToken === "iamabhishekicandelete") {
+      setAuthToken(authToken);
+      setShowAuthModal(false);
+      setAuthError(null);
+    } else {
+      setAuthError("Invalid token! Use: iamabhishekicandelete");
+    }
+  };
+
+  const handleDeleteAll = async () => {
+    if (!authToken || authToken !== "iamabhishekicandelete") {
+      setDeleteAllError("Invalid authorization token");
+      return;
+    }
+    setDeletingAll(true);
+    setDeleteAllError(null);
+    setConfirmDeleteAll(false);
+
+    try {
+      for (const image of images) {
+        const response = await fetch(`/api/images/${image.publicId}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          console.error(`Failed to delete ${image.publicId}`);
+        }
+      }
+      setImages([]);
+      setHasMore(false);
+      setNextCursor(undefined);
+      router.refresh();
+    } catch (err: any) {
+      setDeleteAllError(err.message);
+      console.error("Delete all error:", err);
+    } finally {
+      setDeletingAll(false);
+    }
+  };
 
   const fetchImages = useCallback(
     async (cursor?: string, append: boolean = false) => {
@@ -148,6 +205,59 @@ const GalleryPage = () => {
     }
   };
 
+  if (showAuthModal) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div className="bg-[#1a1a1a] p-8 rounded-2xl border border-white/20 max-w-md w-full mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+              <FiLock className="text-blue-400 text-xl" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-white">
+                Enable Admin Mode
+              </h2>
+              <p className="text-[#87928f] text-sm">
+                Enter admin token to enable delete functions
+              </p>
+            </div>
+          </div>
+
+          <input
+            type="password"
+            value={authToken}
+            onChange={(e) => setAuthToken(e.target.value)}
+            placeholder="Enter admin token"
+            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white text-center mb-4 focus:outline-none focus:border-[#42A5F5]"
+            onKeyDown={(e) => e.key === "Enter" && verifyAuthToken()}
+            autoFocus
+          />
+          <ShimmerButton
+            onClick={verifyAuthToken}
+            className="w-full mb-4 py-3"
+            borderRadius="10px"
+            background="radial-gradient(97.27% 224.15% at 47.97% 100%, rgba(33, 150, 243, 0.20), rgba(0, 0, 0, 0.00)), radial-gradient(42.95% 98.98% at 47.97% 100%, rgba(33, 150, 243, 0.50), rgba(0, 0, 0, 0.00)), #12191B"
+          >
+            Verify Token
+          </ShimmerButton>
+          {authError && (
+            <p className="text-red-400 mb-4 text-center">{authError}</p>
+          )}
+          <ShimmerButton
+            onClick={() => {
+              setShowAuthModal(false);
+              setAuthToken("");
+              setAuthError(null);
+            }}
+            className="w-full py-2 bg-white/10 hover:bg-white/20 text-white text-sm"
+          >
+            Cancel
+          </ShimmerButton>
+        </div>
+      </div>
+    );
+  }
+
   if (confirmDelete) {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
@@ -216,20 +326,11 @@ const GalleryPage = () => {
             <p className="text-[#87928f] text-lg font-semibold max-w-2xl mx-auto">
               Browse all uploaded images
               {authToken === "iamabhishekicandelete" ? (
-                <span className="ml-2 inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
-                  Admin Mode Active
-                </span>
+                <></>
               ) : (
                 <span
                   className="ml-2 inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium cursor-pointer hover:bg-blue-500/40 transition-all"
-                  onClick={() => {
-                    const token = prompt("Enter admin token to enable delete:");
-                    if (token === "iamabhishekicandelete") {
-                      setAuthToken(token);
-                    } else if (token !== null) {
-                      alert("Invalid token! Use: iamabhishekicandelete");
-                    }
-                  }}
+                  onClick={() => setShowAuthModal(true)}
                 >
                   Enable Admin
                 </span>
@@ -291,7 +392,7 @@ const GalleryPage = () => {
                   >
                     <Image
                       src={image.secureUrl}
-                      alt={`Gallery image ${index + 1}`}
+                      alt={"Gallery image ${index + 1}"}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
