@@ -25,6 +25,7 @@ const experiences = [
     date: "1 year",
     description: "Digital Marketing, Google Adwords & Graphic Designer",
     imageUrl: "/company/kardhar.png",
+    href: "https://drive.google.com/drive/folders/1k3QHokbcgh6kfs_V8zGTnG5Pi7VTCnez?usp=drive_link",
   },
   {
     title: "Yug Technology Pvt. Ltd",
@@ -39,6 +40,7 @@ const experiences = [
     date: "1 year",
     description: "Junior Graphic Designer",
     imageUrl: "/company/matrixweb.png",
+    href: "https://drive.google.com/drive/folders/1M9c-C_uuRm7hcxXUZBpcC10GaTcXyjJq?usp=drive_link",
   },
   {
     title: "E-Connect Pvt. Ltd",
@@ -53,6 +55,7 @@ const experiences = [
     date: "6 months",
     description: "Sr.Graphic Designer Executive",
     imageUrl: "/company/zenvertech.png",
+    href: "https://drive.google.com/drive/folders/1sKi6nw9Y1g-w3FSgOnNlcTAwA3L0KMF_?usp=drive_link",
   },
   {
     title: "Elite Informatics Pvt. Ltd & Ayush Remedies",
@@ -60,6 +63,7 @@ const experiences = [
     date: "3 months",
     description: "Sr.Graphic Designer Executive",
     imageUrl: "/company/eliteinfo.jpeg",
+    href: "https://drive.google.com/drive/folders/1ufyABAMcRCRSgbkJUnsO7z3Env_FPCES?usp=drive_link",
   },
   {
     title: "Electroride By Goenka Green",
@@ -67,6 +71,7 @@ const experiences = [
     date: "3 years",
     description: "Sr. Creative Graphic Designer Executive",
     imageUrl: "/company/electroride.webp",
+    href: "https://drive.google.com/drive/folders/1rXRtn0LC5MskwLtgojkq1WSqy4bZZBN2?usp=drive_link",
   },
   {
     title: "Rajendra Toyota Group",
@@ -74,6 +79,7 @@ const experiences = [
     date: "3 years",
     description: "Sr.Graphic Creative Head",
     imageUrl: "/company/toyato.png",
+    href: "https://drive.google.com/drive/folders/1fl7rH7Bu2_SKHZHVfOP3VKxePmcsbWPB?usp=drive_link",
   },
   {
     title: "Freelancer Designer",
@@ -125,9 +131,21 @@ const ExperiencePage = () => {
                     <p className="text-xs text-[#242529] text-muted-foreground">
                       {experience.date}
                     </p>
-                    <h2 className="font-semibold text-lg leading-none">
-                      {experience.title}
-                    </h2>
+                    {experience.href ? (
+                      <a
+                        href={experience.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <h2 className="font-semibold text-lg leading-none">
+                          {experience.title}
+                        </h2>
+                      </a>
+                    ) : (
+                      <h2 className="font-semibold text-lg leading-none">
+                        {experience.title}
+                      </h2>
+                    )}
                     <p className="text-sm text-muted-foreground capitalize text-[#242529]">
                       {experience.location}
                     </p>
