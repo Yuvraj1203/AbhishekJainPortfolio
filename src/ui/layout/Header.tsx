@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Button from "@/ui/common/Button";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -45,6 +44,27 @@ const Header = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathName = usePathname();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    const startAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.volume = 1;
+
+        audioRef.current.play().catch((err) => {
+          console.log("Autoplay blocked:", err);
+        });
+      }
+
+      document.removeEventListener("click", startAudio);
+    };
+
+    document.addEventListener("click", startAudio);
+
+    return () => {
+      document.removeEventListener("click", startAudio);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,6 +84,9 @@ const Header = () => {
   return (
     <>
       {/* Desktop Header */}
+      <audio ref={audioRef} autoPlay preload="auto">
+        <source src="/audio/audioTheme.mpeg" type="audio/mpeg" />
+      </audio>
       <div
         className={`hidden sm:flex sm:w-fit fixed z-50 top-6 w-[96%] m-auto sm:top-8 left-0 right-0 rounded-xl ${isScrolling ? "bg-gradient-to-r from-[#000] to-[#01322090] shadow-[0_0px_12px_#fff]" : ""}`}
       >

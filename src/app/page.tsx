@@ -4,7 +4,6 @@ import Experience from "@/ui/Experience";
 import HeroSection from "@/ui/HeroSection";
 import ProjectSection from "@/ui/ProjectSection";
 import SkillSection from "@/ui/SkillSection";
-import Image from "next/image";
 
 export default function Home() {
   return (
