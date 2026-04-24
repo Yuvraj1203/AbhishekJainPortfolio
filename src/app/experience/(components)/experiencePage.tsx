@@ -120,8 +120,8 @@ const ExperiencePage = () => {
                     <span className="relative flex shrink-0 overflow-hidden rounded-lg  border size-12 m-auto">
                       <Image
                         className="w-full"
-                        width={46}
-                        height={46}
+                        width={100}
+                        height={100}
                         alt={experience.title}
                         src={experience.imageUrl}
                       />
