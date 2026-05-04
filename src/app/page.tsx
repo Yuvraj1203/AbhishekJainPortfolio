@@ -10,7 +10,7 @@ export default function Home() {
     <main className="max-h-full w-full pt-10 relative bg-gradient-to-r from-[#000] to-[#2196F352] bg-[#12191b]">
       <HeroSection />
       <SkillSection />
-      <ProjectSection />
+      {/* <ProjectSection /> */}
       <Experience />
       <ContactStrip />
     </main>

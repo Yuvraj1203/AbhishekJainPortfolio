@@ -70,7 +70,7 @@ const experiences = [
     location: "Varanasi, Uttar Pradesh, India",
     date: "3 years",
     description: "Sr. Creative Graphic Designer Executive",
-    imageUrl: "/company/electroride.webp",
+    imageUrl: "/company/Electroride.png",
     href: "https://drive.google.com/drive/folders/1rXRtn0LC5MskwLtgojkq1WSqy4bZZBN2?usp=drive_link",
   },
   {
@@ -86,7 +86,7 @@ const experiences = [
     location: "Udaipur city, India",
     date: "2 years",
     description: "Various Client Projects",
-    imageUrl: "/assets/behance.png",
+    imageUrl: "/company/BehanceCompany.png",
   },
   {
     title: "Creative Director",

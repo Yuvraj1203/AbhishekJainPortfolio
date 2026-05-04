@@ -14,10 +14,10 @@ const HeaderItems = [
     url: "/about",
     title: "About",
   },
-  {
-    url: "/project",
-    title: "Project",
-  },
+  // {
+  //   url: "/project",
+  //   title: "Project",
+  // },
   {
     url: "/experience",
     title: "Experience",
